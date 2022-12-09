@@ -1,0 +1,27 @@
+function spiralArray(inputArray){
+    let solution = []
+    let maxLength = Number.NEGATIVE_INFINITY
+
+    let row = 0;
+    let column = 0;
+    for(column; column < inputArray.length-1; column++){
+        solution.push(inputArray[row][column])
+    }
+    row += 1;
+    for(row; row < inputArray.length-1; row++){
+        solution.push(inputArray[row][column])
+    }
+    column -= 1
+    for(column; column > -1; column--){
+        solution.push(inputArray[row][column])
+    }
+    row -= 1;
+    for(row; row < inputArray.length-1; row++){
+        solution.push(inputArray[row][column])
+    }
+return solution
+}
+
+let inputArray = [[1, 2, 3, 4], [5,6,7,8], [9,10,11,12], [13,14,15,16]];
+let solution = spiralArray(inputArray);
+console.log(solution)
