@@ -1,23 +1,62 @@
 function spiralArray(inputArray){
     let solution = []
-    let maxLength = Number.NEGATIVE_INFINITY
 
-    let row = 0;
-    let column = 0;
-    for(column; column < inputArray.length-1; column++){
-        solution.push(inputArray[row][column])
+    //If the array is empty, return a blank array
+    if(inputArray.length == 0){
+        return solution;
     }
-    row += 1;
-    for(row; row < inputArray.length-1; row++){
-        solution.push(inputArray[row][column])
-    }
-    column -= 1
-    for(column; column > -1; column--){
-        solution.push(inputArray[row][column])
-    }
-    row -= 1;
-    for(row; row < inputArray.length-1; row++){
-        solution.push(inputArray[row][column])
+
+    //Define the dimensions of the matrix
+    let rowMax = inputArray.length;
+    let columnMax = inputArray[0].length;
+    let top = 0;
+    let bottom = rowMax - 1;
+    let left = 0;
+    let right = columnMax -1;
+
+     //Define the directions
+    let direction = 1;
+
+    //Navigate the array
+    while(top <= bottom && left <= right){
+        //Moving left to right
+        if(direction == 1){
+            for(let i = left; i <= right; i++){
+                solution.push(inputArray[top][i])
+            }
+            //Navigated the top, so we need to drop down a row            
+            top++;
+            direction++;
+            console.log(direction)
+        }
+        //Naviagte down the far right column
+        else if(direction == 2){
+            for(let i = top; i <= bottom; i++){
+                solution.push(inputArray[i][right])
+            }
+            //The right side is done, so adjust the boundary left
+            right--;
+            direction++;
+            console.log(direction)
+        }
+        //Navigate from right to left to the far left side
+        else if(direction == 3){
+            for(let i = right; i >= left; i--){
+                solution.push(inputArray[bottom][i]);
+            }
+            //Botton row is done, so adjust he boundary up
+            bottom--;
+            direction++;
+        }
+        //Navigate from bottom to top on the left side
+        else if(direction == 4){
+            for(let i = bottom; i >= top; i--){
+                solution.push(inputArray[i][left]);
+            }
+            //Botton row is done, so adjust he boundary to the right
+            left++;
+            direction =1;
+        }
     }
 return solution
 }
