@@ -1,0 +1,16 @@
+function processInput(inputArray){
+    var maxSum = inputArray[0]
+    var currentSum = inputArray[0]
+    for(pos = 1; pos < inputArray.length; pos++){
+        currentSum = Math.max((currentSum + inputArray[pos]), inputArray[pos])
+        console.log(currentSum, inputArray[pos])
+        if(currentSum > maxSum){
+            maxSum = currentSum
+        }
+    }
+    return maxSum
+}
+
+let inputArray = [-4,5,7,-6,10,-15,3]
+let solution = processInput(inputArray);
+console.log(solution)
