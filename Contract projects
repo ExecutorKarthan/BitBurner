@@ -30,3 +30,17 @@ You are given the following array of stock prices (which are numbers) where the 
 14,32,10,60,94,54
 
 Determine the maximum possible profit you can earn using at most one transaction (i.e. you can only buy and sell the stock once). If no profit can be made then the answer should be 0. Note that you have to buy the stock before you can sell it
+
+Array Jumping Game
+You are attempting to solve a Coding Contract. You have 1 tries remaining, after which the contract will self-destruct.
+
+
+You are given the following array of integers:
+
+0,2,1
+
+Each element in the array represents your MAXIMUM jump length at that position. This means that if you are at position i and your maximum jump length is n, you can jump to any position from i to i+n.
+
+Assuming you are initially positioned at the start of the array, determine whether you are able to reach the last index.
+
+Your answer should be submitted as 1 or 0, representing true and false respectively
