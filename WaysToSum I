@@ -1,0 +1,24 @@
+	function waysToSum(n, valueMap){
+		//let valueMap = new Map();
+		function p(n){	
+			let output = Math.floor(n)
+			if(output < 0){
+				return 0;
+			}
+			if(output === 0){
+				return 1;
+			}
+			if(valueMap.has(output)){
+				return valueMap.get(output);
+			}
+			let sum = 0
+			for(let k = 1; k <= output; k++){	
+				let pos = waysToSum(output - ((k*(3*k+1))/2), valueMap)
+				let neg = waysToSum(output - ((k*(3*k-1))/2), valueMap)
+				sum += (-1)**(k-1) * (pos + neg)
+			}
+			valueMap.set(output, sum)
+			return valueMap.get(output)
+		}
+		return p(n)
+	}
