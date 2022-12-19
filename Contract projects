@@ -1,0 +1,24 @@
+Total Ways to Sum II
+You are attempting to solve a Coding Contract. You have 10 tries remaining, after which the contract will self-destruct.
+
+
+How many different distinct ways can the number 76 be written as a sum of integers contained in the set:
+
+[1,5,9,11,12,13,15,22,26,27]?
+
+You may use each integer in the set zero or more times.
+
+
+Encryption I: Caesar Cipher
+You are attempting to solve a Coding Contract. You have 10 tries remaining, after which the contract will self-destruct.
+
+
+Caesar cipher is one of the simplest encryption technique. It is a type of substitution cipher in which each letter in the plaintext is replaced by a letter some fixed number of positions down the alphabet. For example, with a left shift of 3, D would be replaced by A, E would become B, and A would become X (because of rotation).
+
+You are given an array with two elements:
+  ["DEBUG TABLE PRINT POPUP LOGIN", 19]
+The first element is the plaintext, the second element is the left shift value.
+
+Return the ciphertext as uppercase string. Spaces remains the same.
+
+
