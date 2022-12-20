@@ -5,9 +5,6 @@ let profit = Number.NEGATIVE_INFINITY;
 for(let x = 0; x < inputArray.length; x++){
     let currentPrice = inputArray[x];
     for(let y = x+1; y < inputArray.length; y++){
-        let cuPri = currentPrice
-        let comparePrice = inputArray[y]
-        let prof = profit
         if((inputArray[y]) - currentPrice > profit){
             profit = inputArray[y] - currentPrice;
         }
