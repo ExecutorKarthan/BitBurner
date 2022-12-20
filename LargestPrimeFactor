@@ -44,7 +44,7 @@ primeArray.forEach(value => {
     primeMap.set(value, value)    
 });
 //run your function to find the largest prime factor
-console.log(determineBigPrimeFactor(1578885))
+console.log(determineBigPrimeFactor(7242648232))
 
 //******Add code to save the new primeArray in a text file
 console.log("End")

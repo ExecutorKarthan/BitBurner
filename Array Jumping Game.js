@@ -11,8 +11,22 @@ function jumpGameI(inputArray){
             return solution
         }
         //Determine the max distance for the next jump, then set i to the max distance's corresponding index
-        var maxDistance = Math.max(...possibleLandings);
-        i = inputArray.indexOf(maxDistance, i)
+        //Option 1
+        //var maxDistance = Math.max(...possibleLandings);
+        //i = inputArray.indexOf(maxDistance, i)
+
+        //Option 2 - test code
+        var maxDistance = 0;
+        var bestLandIndex = 0;
+        possibleLandings.forEach((jumpValue, posIndex) => {           
+            var currentLandSite = i + jumpValue + posIndex + 1
+            if (currentLandSite > maxDistance){
+                maxDistance = currentLandSite
+                bestLandIndex = i + posIndex + 1;
+            }
+        });
+
+        i = bestLandIndex
         //If your max distance is 0 (cannot jump) or is negative infinity, then you cannot jump and therefore return 0
         if(maxDistance == 0 || maxDistance == Number.NEGATIVE_INFINITY){
             solution = 0;
